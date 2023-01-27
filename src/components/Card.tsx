@@ -1,17 +1,14 @@
 import React from 'react'
 
 interface CardProps {
-    name:string;
-    icon:any;
-    amount:any;
+   children:any;
+   extra?:string;
 }
 
-export const Card: React.FC<CardProps> = ({name,icon,amount}) => {
+export const Card: React.FC<CardProps> = ({children,extra}) => {
         return (
-            <div className='card'>
-                <img src={icon} alt="users" />
-                <p>{name}</p>
-                <span>{amount}</span>
+            <div className={`card ${extra ? extra : ''}`}>
+               {children}
             </div>
         );
 }

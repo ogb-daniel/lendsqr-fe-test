@@ -1,0 +1,33 @@
+@use '../base/typography' as fonts;
+.card{
+    min-width: 240px;
+    padding: 1.5em;
+    background-color: #fff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+border-radius: 4px;
+& .actionName{
+    font-weight: 500;
+    margin-top: 14px;
+font-size: 14px;
+line-height: 16px;
+color: fonts.$secondary1;
+text-transform: uppercase;
+}
+
+& .actionAmount{
+    font-weight: 600;
+font-size: 24px;
+line-height: 28px;
+
+color: fonts.$primary;
+}
+&__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & *+*{
+        margin-top: 0;
+    }
+}
+}

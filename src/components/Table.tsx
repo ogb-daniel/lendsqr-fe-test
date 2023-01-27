@@ -12,9 +12,10 @@ interface TableProps {
     setSelectedUserId:any;
     show:any;
     setShow:any;
+    isLoading:boolean;
 }
 
-export const Table: React.FC<TableProps> = ({show,setShow,users,currentUsers,selectedUserId,setSelectedUserId}) => {
+export const Table: React.FC<TableProps> = ({isLoading,show,setShow,users,currentUsers,selectedUserId,setSelectedUserId}) => {
         return (
             <div className='table'>
                 <div className='table__header'>
@@ -26,6 +27,9 @@ export const Table: React.FC<TableProps> = ({show,setShow,users,currentUsers,sel
                     <span className='header'>status <img src={filter} alt="filter" /></span>
                   
                 </div>
+                {
+        isLoading && <h2 className='loading'>Loading...</h2>
+    }
               <PaginatedView show={show} setShow={setShow} currentUsers={currentUsers} selectedUserId={selectedUserId} setSelectedUserId={setSelectedUserId}/>
                    
             </div>

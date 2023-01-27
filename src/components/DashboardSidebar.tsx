@@ -3,6 +3,7 @@ import { businesses, customers, settings } from '../helper';
 import { DashboardListItem } from './DashboardListItem';
 const downArrow =  require('../images/downArrow.png');
 const briefcase =  require('../images/briefcase.png');
+const signOut =  require('../images/signout.png');
 interface DashboardSidebarProps {
     active:string;
     setActive:React.Dispatch<React.SetStateAction<string>>;
@@ -62,6 +63,16 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({active,setAct
                         }
                     )
                     }
+
+                   
+                    <li  className='list-item footer'>
+                        <img src={signOut} alt="signout" />
+                        <span>Logout</span>
+                    </li>
+
+                    <li className='list-item'>v1.2.0</li>
+
+
           
             </div>
         );

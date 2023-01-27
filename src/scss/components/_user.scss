@@ -1,0 +1,132 @@
+@use '../base/typography' as colors;
+h3{
+    margin: 0;
+}
+.details{
+    position: relative;
+    .back{
+        display: flex;
+        align-items: center;
+        & img{
+            margin-right: 1em;
+        } 
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & *+*{
+            margin-top: 0;
+        }
+
+    }
+    
+    &__user{
+        display: flex;
+        align-items: center;
+  
+line-height: 26px;
+        & *+*{
+            margin-top: 0;
+        }
+    & div > h3,div > p{
+        margin: 0;
+    }
+        &__avatar{
+            background-color: #DBE0EA;
+            border-radius: 100%;
+            width: 100px;
+            height: 100px;
+            
+        }
+        & > div{
+            padding:1em 2em;
+           
+        }
+        & > :nth-child(3){
+            font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+
+color: colors.$secondary1;
+            border-left: 1px solid #DDDFE5;
+            border-right: 1px solid #DDDFE5;
+           & p{
+            margin-bottom: 0.5em;
+           }
+        }
+    }
+    &__nav{
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        & *+*{
+            margin-top: 0;
+        }
+        & span{
+            padding: 0.5em 2em;
+            &.active{
+                color: colors.$secondary;
+                border-bottom: 2px solid #39CDCC;
+            }
+        }
+    }
+}
+
+.btn{
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    &.blacklist{
+        border: 1px solid #E4033B;
+        color: #E4033B;
+    }
+    &.activate{
+        border: 1px solid #39CDCC;
+        color: colors.$secondary;
+        margin-left: 1em;
+        
+    }
+}
+
+.card.extra{
+    padding-bottom: 0;
+}
+
+.personal{
+    p{
+        margin: 0;
+    }
+    padding: 1.5em 0;
+    border-bottom: 1px solid #E9ECF2;
+    & div *+*{
+        margin-top: 0.5em;
+    }
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 2em;
+    & > *+*{
+        margin-top: 0;
+    }
+    color: colors.$secondary1;
+    & div > :nth-child(1){
+        text-transform: uppercase;
+       
+        font-size: 12px;
+line-height: 14px;
+    }
+
+    & div > :nth-child(2){
+        font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+    }
+}

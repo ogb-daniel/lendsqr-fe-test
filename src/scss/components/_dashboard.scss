@@ -1,4 +1,4 @@
-@use '../base/typography' as fonts;
+@use '../base/typography' as colors;
 .dashboard{
 
     &__header{
@@ -28,7 +28,7 @@
               list-style-type: none; 
               margin-right: 3em;
               & a{
-                 color: fonts.$primary;
+                 color: colors.$primary;
               }  
           }  
           & .bell{
@@ -54,7 +54,7 @@ box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
     margin-bottom: 1.5em;
     
     margin-top: 2em;
-    color: fonts.$primary ;
+    color: colors.$primary ;
 }
 & > li:nth-of-type(2){
     margin-bottom: 2em;
@@ -63,7 +63,7 @@ box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
     font-weight: 500;
     margin: 0;
     text-transform: uppercase;
-color: fonts.$secondary1;
+color: colors.$secondary1;
 margin: 1em 0;
 }
 
@@ -73,13 +73,15 @@ margin: 1em 0;
 }
         }
         &__body{
-            color: fonts.$primary;
+            color: colors.$primary;
             & h1{
                 margin: 0;
                 font-weight: 500;
 font-size: 24px;
             }
-            min-width: 75%;
+         
+            width: 100%;
+            max-width: 75%;
             margin: 4em auto 0;
         }
     }
@@ -98,7 +100,7 @@ font-size: 24px;
     &__name > span{
         display: flex;
         align-items: center;
-        color: fonts.$primary;
+        color: colors.$primary;
     & *+*{
         margin-left: 0.5em;
     }
@@ -108,11 +110,11 @@ font-size: 24px;
 
 .active{
 
-    color: fonts.$primary ;
+    color: colors.$primary ;
 
     &.list-item{
 background-color: #F3FCFC;
-border-left: 2px solid fonts.$secondary;
+border-left: 2px solid colors.$secondary;
     }
 }
 
@@ -136,44 +138,13 @@ border-left: 2px solid fonts.$secondary;
     }
 }
 
-.card{
-    width: 240px;
-    padding: 1.5em;
-    background-color: #fff;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-border-radius: 4px;
-& p{
-    font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-color: fonts.$secondary1;
-text-transform: uppercase;
-}
-
-& span{
-    font-weight: 600;
-font-size: 24px;
-line-height: 28px;
-
-color: fonts.$primary;
-}
-&__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    & *+*{
-        margin-top: 0;
-    }
-}
-}
 
 .table{
     
     font-size: 12px;
     padding: 2em;
     grid-auto-rows: 1fr;
-    color: fonts.$secondary1;
+    color: colors.$secondary1;
     background-color: #fff;
     border: 1px solid rgba(33, 63, 125, 0.06);
 box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -204,7 +175,7 @@ line-height: 16px;
         align-items: center;
         font-weight: 600;
         text-transform: uppercase;
-        color: fonts.$secondary1;
+        color: colors.$secondary1;
         & img{
             width: 1em;
             margin-left: 10px;
@@ -229,7 +200,7 @@ line-height: 16px;
 }
 
 .paginate{
-    color: fonts.$secondary1;
+    color: colors.$secondary1;
     & > span > select{
         background: rgba(33, 63, 125, 0.1);
 border-radius: 4px;
@@ -237,7 +208,7 @@ outline: none;
 border: none;
 font-weight: 500;
 padding: 0.3em 1em;
-color: fonts.$primary;
+color: colors.$primary;
         margin-inline: 0.5em;
     }
     display: flex;
@@ -254,7 +225,7 @@ color: fonts.$primary;
     }
  
     .selectedPage{
-        color: fonts.$primary;
+        color: colors.$primary;
     }
 }
 
@@ -273,7 +244,7 @@ color: fonts.$primary;
         content: '';
         width: 0.5em;
         height: 2px;
-        background-color: fonts.$primary;
+        background-color: colors.$primary;
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
         transform: translateY(-2px) rotate(50deg);
@@ -286,7 +257,7 @@ color: fonts.$primary;
         content: '';
         width: 0.5em;
         height: 2px;
-        background-color: fonts.$primary;
+        background-color: colors.$primary;
         transform:   rotate(-50deg);
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
@@ -309,7 +280,7 @@ color: fonts.$primary;
         content: '';
         width: 0.5em;
         height: 2px;
-        background-color: fonts.$primary;
+        background-color: colors.$primary;
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         transform: translateY(-2px) rotate(-50deg);
@@ -322,7 +293,7 @@ color: fonts.$primary;
         content: '';
         width: 0.5em;
         height: 2px;
-        background-color: fonts.$primary;
+        background-color: colors.$primary;
         transform:   rotate(50deg);
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
@@ -351,4 +322,22 @@ div{
 img{
     margin-right: 0.5em;
 }
+}
+
+.loading{
+    margin-top: 3em;
+    text-align: center;
+}
+
+.more:hover{
+    cursor: pointer;
+}
+
+.footer{
+    margin-top: 3em;
+    border-top: 1px solid #E9ECF2;
+    color: #213F7D;
+    &:hover{
+        cursor: pointer;
+    }
 }

@@ -34,6 +34,7 @@ export const TableUser: React.FC<TableUserProps> = ({setShow,show=false,setSelec
               show &&
               <div className='modal'>
                 <div onClick={(e)=>{
+                  setSelectedUserId(id)
                   e.stopPropagation()
                 }}><img src={viewDetails} alt="eye" />View Details</div>
                 <div><img src={blacklist} alt="blacklist" />Blacklist User</div>
