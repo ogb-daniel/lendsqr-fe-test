@@ -11,7 +11,7 @@ export const DashboardMain: React.FC<DashboardMainProps> = ({}) => {
     return (
             <div className='dashboard__main'>
                 <DashboardSidebar setActive={setActiveId} active={activeId}/>
-                <DashboardBody />
+                <DashboardBody activeScreen={activeId}/>
             </div>
         );
 }

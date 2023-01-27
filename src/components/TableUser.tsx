@@ -19,7 +19,7 @@ export const TableUser: React.FC<TableUserProps> = ({orgName,userName,email,phon
             <span style={{gridColumn:'span 3'}}>{email}</span>
             <span>{phoneNumber}</span>
             <span>{moment.utc(dateJoined).format("MMM DD, YYYY LT").toString()}</span>
-            <span className='hack'> <span className='pill'>Inactive</span>  <img src={more} alt="more" className='more'/></span>
+            <span className='hack'> <span className='pill'>Active</span>  <img src={more} alt="more" className='more'/></span>
           </div>
         );
 }
