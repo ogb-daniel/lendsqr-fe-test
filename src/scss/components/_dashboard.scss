@@ -331,3 +331,24 @@ color: fonts.$primary;
         }
     }
 }
+
+.modal{
+    position: absolute;
+    font-weight: 500;
+background: #FFFFFF;
+border: 1px solid rgba(84, 95, 125, 0.04);
+box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+border-radius: 4px;
+padding: 1em;
+div{
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+    }
+}
+img{
+    margin-right: 0.5em;
+}
+}

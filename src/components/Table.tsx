@@ -8,9 +8,13 @@ const filter = require('../images/filter.png');
 interface TableProps {
     users:Array<any>;
     currentUsers:Array<any>;
+    selectedUserId:any;
+    setSelectedUserId:any;
+    show:any;
+    setShow:any;
 }
 
-export const Table: React.FC<TableProps> = ({users,currentUsers}) => {
+export const Table: React.FC<TableProps> = ({show,setShow,users,currentUsers,selectedUserId,setSelectedUserId}) => {
         return (
             <div className='table'>
                 <div className='table__header'>
@@ -22,7 +26,7 @@ export const Table: React.FC<TableProps> = ({users,currentUsers}) => {
                     <span className='header'>status <img src={filter} alt="filter" /></span>
                   
                 </div>
-              <PaginatedView currentUsers={currentUsers} />
+              <PaginatedView show={show} setShow={setShow} currentUsers={currentUsers} selectedUserId={selectedUserId} setSelectedUserId={setSelectedUserId}/>
                    
             </div>
         );
