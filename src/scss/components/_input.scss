@@ -1,0 +1,47 @@
+@use '../base/typography' as f;
+
+.input_container{
+    display: flex;
+    
+    & span{
+        margin: 0;
+        color: f.$secondary;
+        font-size: 12px;
+        width: 50px;
+        font-weight: 600;
+        display: flex;
+        align-items: center; 
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-radius: 5px;
+        &:hover{
+           cursor: pointer; 
+        }
+    }
+
+    & .search{   
+        width: 56px;
+        background-color: f.$secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+       
+        border-radius: 0 5px 5px 0;
+    }
+}
+.input{
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 5px;
+    padding: 1em 0.5em;
+
+}
+
+.show_bar{
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
