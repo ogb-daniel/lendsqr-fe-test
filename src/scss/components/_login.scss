@@ -1,0 +1,48 @@
+
+@use '../base/typography' as f;
+.login{
+    max-width: 90%;
+    margin-inline: auto;
+    padding: 3em 0;
+   &__body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   &__form{
+    margin-top: 0;
+    width: 500px;
+    & > h1{
+        margin: 0;
+        color: #213F7D;
+        font-weight: bold;
+    }
+
+    & .input,button{
+        width: 100%;
+    }
+
+    & > p:first-of-type{
+        color: #545F7D;
+        margin-bottom: 3em;
+    }
+
+    & > .forgot_password{
+        color: f.$secondary;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    & > button{
+        background-color: f.$secondary;
+        border: none;
+        border-radius: 8px;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 600;
+font-size: 14px;
+        padding: 1em 0.5em;
+    }   
+   }
+}
+
