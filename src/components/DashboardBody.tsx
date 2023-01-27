@@ -40,10 +40,10 @@ export const DashboardBody: React.FC<DashboardBodyProps> = ({}) => {
             <div className='dashboard__main__body'>
                 <h1>Users</h1>
                 <div className='card__container'>
-                <Card name="users" icon={card1}/>
-                <Card name="active users" icon={card2}/>
-                <Card name="users with loans" icon={card3}/>
-                <Card name="users with savings" icon={card4}/>
+                <Card name="users" icon={card1} amount={users.length}/>
+                <Card name="active users" icon={card2} amount={users.length}/>
+                <Card name="users with loans" icon={card3} amount="12,453"/>
+                <Card name="users with savings" icon={card4} amount="102,453"/>
                 </div>
                 <Table users={users} currentUsers={currentUsers} />
                 <div className='paginate'>
