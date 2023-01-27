@@ -13,15 +13,23 @@ interface UserDetailProps {
 export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selectedUserId}) => {
     const [active, setActive] = useState(0);  
     const [user, setUser] = useState<any>(null);  
+    const localUserDetail = window.localStorage.getItem(selectedUserId)
+   
+    console.log(localUserDetail);
+    
     useEffect(() => {
         const fetchUserDetail=async()=>{
-
             const response = await fetch(`http://localhost:8010/proxy/lendsqr/api/v1/users/${selectedUserId}`);
                const user = await response.json();
                console.log(user);
+               window.localStorage.setItem(selectedUserId,JSON.stringify(user))
                setUser(user);
             }
-            fetchUserDetail();
+            if(!localUserDetail){
+                fetchUserDetail();
+            }else{
+                setUser(JSON.parse(localUserDetail))
+            }
     }, [])
      
     return (
@@ -69,7 +77,7 @@ export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selecte
                 </Card>
                 }
                 {
-                    user &&
+                       user  &&
                 <RenderedDetail renderedId={active} user={user}/>
                 }
              
