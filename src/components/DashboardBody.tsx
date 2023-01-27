@@ -5,8 +5,6 @@ const card1 = require('../images/card1.png');
 const card2 = require('../images/card2.png');
 const card3 = require('../images/card3.png');
 const card4 = require('../images/card4.png');
-const prev = require('../images/prev-btn.png');
-const next = require('../images/next-btn.png');
 interface DashboardBodyProps {
     
 }
@@ -67,13 +65,17 @@ export const DashboardBody: React.FC<DashboardBodyProps> = ({}) => {
                             <div className={`${selectedId === 0 ? "disabled" : ""}`}></div>
                             <div className={`${selectedId === 0 ? "disabled" : ""}`}></div>
                         </button>
-                            {displayPageNumbers().map((el,id)=>(
-                                <span onClick={()=>{
-                                    setSelectedId(id)
-                                }} key={id} className={`${id === selectedId ? 'selectedPage' : ''}`} style={{marginLeft:'20px'}}>
-                                    {el}
-                                </span>
-                            ))}
+                            {displayPageNumbers().map((el,id)=>{
+                                return(
+                                    
+                                    <span onClick={()=>{
+                                        setSelectedId(id)
+                                    }} key={id} className={`${id === selectedId ? 'selectedPage' : ''}`} style={{marginLeft:'20px'}}>
+                                        {el}
+                                    </span>
+                                )
+                            }
+                            )}
                         <button className={`next `} disabled={selectedId+1 === users.length / usersPerPage} onClick={()=>setSelectedId(selectedId + 1)}>
                         <div className={`${selectedId+1 === users.length / usersPerPage ? 'disabled':""}`}></div>
                         <div className={`${selectedId+1 === users.length / usersPerPage ? 'disabled':""}`}></div>

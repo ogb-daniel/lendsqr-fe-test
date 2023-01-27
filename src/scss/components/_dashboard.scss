@@ -53,18 +53,18 @@ box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
 & > li:first-of-type{
     margin-bottom: 1.5em;
     
-    margin-top: 3.5em;
+    margin-top: 2em;
     color: fonts.$primary ;
 }
 & > li:nth-of-type(2){
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 & .header{
     font-weight: 500;
     margin: 0;
     text-transform: uppercase;
 color: fonts.$secondary1;
-margin-bottom: 1em;
+margin: 1em 0;
 }
 
 
@@ -89,8 +89,8 @@ font-size: 24px;
     display: flex;
     align-items: center;
     &__avatar{
-        width: 60px;
-        height: 60px;
+        width: 3em;
+        height: 3em;
         border-radius: 50%;
         object-fit: cover;
         margin-right: 0.5em;
@@ -120,7 +120,7 @@ border-left: 2px solid fonts.$secondary;
     display: flex;
     align-items: center;
     list-style-type: none;
-    margin-bottom: 1em;
+
     padding: 1em 2em;
     
     & *+*{
