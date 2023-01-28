@@ -17,9 +17,19 @@ export const TableUsers: React.FC<TableUsersProps> = ({show,setShow,setSelectedU
                 currentUsers && 
                 currentUsers.map((user)=>{
                     if(show === user.id){
-                        return <TableUser show={true} setSelectedUserId={setSelectedUserId} key={user.id} id={user.id} orgName={user.orgName} userName={user.userName} phoneNumber={user.phoneNumber} email={user.email} dateJoined={user.createdAt} />
+                        return (
+                            <>
+<TableUser show={true} setSelectedUserId={setSelectedUserId} key={user.id} id={user.id} orgName={user.orgName} userName={user.userName} phoneNumber={user.phoneNumber} email={user.email} dateJoined={user.createdAt} />
+<div className='hr'></div>
+                            </>
+                        )
                     }
-                    return <TableUser setShow={setShow} setSelectedUserId={setSelectedUserId} key={user.id} id={user.id} orgName={user.orgName} userName={user.userName} phoneNumber={user.phoneNumber} email={user.email} dateJoined={user.createdAt} />
+                    return (
+                        <>
+                         <TableUser setShow={setShow} setSelectedUserId={setSelectedUserId} key={user.id} id={user.id} orgName={user.orgName} userName={user.userName} phoneNumber={user.phoneNumber} email={user.email} dateJoined={user.createdAt} />
+                         <div className='hr'></div>
+                        </>
+                    )
 })
             }
             </>

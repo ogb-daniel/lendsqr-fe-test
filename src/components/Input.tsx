@@ -6,11 +6,12 @@ interface InputProps {
     search?:boolean;
     value:any;
     onChange:any;
+    className?:any;
 }
 
 
 
-export const Input: React.FC<InputProps> = ({value,onChange,type,placeholder,search}) => {
+export const Input: React.FC<InputProps> = ({className,value,onChange,type,placeholder,search}) => {
     const ref = useRef<HTMLInputElement>(null);    
     const [showPass,setShowPass] = useState(false);
     
@@ -24,7 +25,7 @@ export const Input: React.FC<InputProps> = ({value,onChange,type,placeholder,sea
         }
     }
     return (
-            <div className={`input_container`}>
+            <div className={`input_container ${className}`}>
                 
                 <input value={value} onChange={onChange} className={`input ${type === 'password' || search ? 'show_bar' : ""} `} ref={ref} type={type} placeholder={placeholder} />
                 {type === 'password' && <span onClick={handleShowPassword}>SHOW</span>}

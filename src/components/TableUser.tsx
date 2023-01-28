@@ -19,13 +19,13 @@ interface TableUserProps {
 
 export const TableUser: React.FC<TableUserProps> = ({setShow,show=false,setSelectedUserId,id,orgName,userName,email,phoneNumber,dateJoined}) => {
   return (
-            <div className='table__user' >
-            <span>{orgName}</span>
-            <span>{userName}</span>
-            <span style={{gridColumn:'span 3'}}>{email}</span>
-            <span>{phoneNumber}</span>
-            <span>{moment.utc(dateJoined).format("MMM DD, YYYY LT").toString()}</span>
-            <span className='hack'> <span className='pill'>Active</span>
+            <>
+            <span className='body'>{orgName}</span>
+            <span className='body'>{userName}</span>
+            <span className='body'>{email}</span>
+            <span className='body'>{phoneNumber}</span>
+            <span className='body'>{moment.utc(dateJoined).format("MMM DD, YYYY LT").toString()}</span>
+            <span className='hack body'> <span className='pill'>Active</span>
               <img onClick={(e)=>{
                 setShow(id);
                 e.stopPropagation();
@@ -42,6 +42,6 @@ export const TableUser: React.FC<TableUserProps> = ({setShow,show=false,setSelec
               </div>
             }
               </span>
-          </div>
+          </>
         );
 }
