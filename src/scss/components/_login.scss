@@ -4,14 +4,28 @@
     max-width: 90%;
     margin-inline: auto;
     padding: 3em 0;
-   &__body{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   }
+    &__body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &__image{
+            width: 30em;
+        }
+    }
+    @media  (min-width:800px) {
+        &__body{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+           }
+           &__form{
+            width: 500px;
+           }
+    }
    &__form{
     margin-top: 0;
-    width: 500px;
+
     & > h1{
         margin: 0;
         color: #213F7D;

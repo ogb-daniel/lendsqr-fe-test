@@ -11,7 +11,7 @@ interface UserDetailProps {
 }
 
 export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selectedUserId}) => {
-    const [active, setActive] = useState(0);  
+    const [active, setActive] = useState('General Details');  
     const [user, setUser] = useState<any>(null);  
     const localUserDetail = window.localStorage.getItem(selectedUserId)
    
@@ -50,7 +50,7 @@ export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selecte
                         <img className='details__user__avatar' src={user.profile.avatar} alt="user" />
                         <div>
                             <h3>{user.userName}</h3>
-                            <p>aomapfaw</p>
+                            <p>{user.orgName}</p>
                         </div>
                         <div>
                             <p>User's Tier</p>
@@ -67,12 +67,12 @@ export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selecte
                     </div>
 
                     <div className='details__nav'>
-                        <span className={`${active === 0 ? 'active' : ''}`} onClick={()=>setActive(0)}>General Details</span>
-                        <span className={`${active === 1 ? 'active' : ''}`} onClick={()=>setActive(1)}>Documents</span>
-                        <span className={`${active === 2 ? 'active' : ''}`} onClick={()=>setActive(2)}>Bank Details</span>
-                        <span className={`${active === 3 ? 'active' : ''}`} onClick={()=>setActive(3)}>Loans</span>
-                        <span className={`${active === 4 ? 'active' : ''}`} onClick={()=>setActive(4)}>Savings</span>
-                        <span className={`${active === 5 ? 'active' : ''}`} onClick={()=>setActive(5)}>App and System</span>
+                        <span className={`${active === 'General Details' ? 'active' : ''}`} onClick={()=>setActive('General Details')}>General Details</span>
+                        <span className={`${active === 'Documents' ? 'active' : ''}`} onClick={()=>setActive('Documents')}>Documents</span>
+                        <span className={`${active === 'Bank Details' ? 'active' : ''}`} onClick={()=>setActive('Bank Details')}>Bank Details</span>
+                        <span className={`${active === 'Loans' ? 'active' : ''}`} onClick={()=>setActive('Loans')}>Loans</span>
+                        <span className={`${active === 'Savings' ? 'active' : ''}`} onClick={()=>setActive('Savings')}>Savings</span>
+                        <span className={`${active === 'App and System' ? 'active' : ''}`} onClick={()=>setActive('App and System')}>App and System</span>
                     </div>
                 </Card>
                 }

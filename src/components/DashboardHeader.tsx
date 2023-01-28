@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,ChangeEvent} from 'react'
 import { Input } from './Input';
 const logo =  require('../images/logo.jpg');
 const avatar =  require('../images/avatar.jpg');
@@ -9,10 +9,13 @@ interface DashboardHeaderProps {
 }
 
 export const DashboardHeader: React.FC<DashboardHeaderProps> = ({}) => {
-        return (
+    const [search, setSearch] = useState(""); 
+    return (
             <div className='dashboard__header'>
                 <img src={logo} alt="logo" />
-                <Input placeholder='Search for anything' type='text' search={true} />
+                <Input value={search} onChange={(e:ChangeEvent<HTMLInputElement>)=>{
+                    setSearch(e.target.value)
+                }} placeholder='Search for anything' type='text' search={true} />
                 <div className='dashboard__header__right'>
                     <li className='docs'><a href="#">Docs</a></li>
                     <img className='bell' src={bell} alt="notifications" />

@@ -26,10 +26,10 @@ export const UsersScreen: React.FC<UsersScreenProps> = ({selectedUserId,users,se
     let amount = 0;
     let renderedPage = selectedId * usersPerPage;
     const currentUsers = users.slice(renderedPage,renderedPage + usersPerPage);
+    let pageCount = users.length / usersPerPage;
 
+    let elements: JSX.Element[] = [];
     function displayPageNumbers(){
-        let elements = [];
-        let pageCount = users.length / usersPerPage;
         for (let index = 0; index < pageCount; index++) {
            
                elements.push(<span>{index+1}</span>)
@@ -85,17 +85,19 @@ export const UsersScreen: React.FC<UsersScreenProps> = ({selectedUserId,users,se
                                     <div className={`${selectedId === 0 ? "disabled" : ""}`}></div>
                                     <div className={`${selectedId === 0 ? "disabled" : ""}`}></div>
                                 </button>
-                                    {displayPageNumbers().map((el,id)=>{
+                                    { displayPageNumbers().map((el,id)=>{
                                         return(
                                             
                                             <span onClick={()=>{
-                                                setSelectedId(id)
-                                            }} key={id} className={`${id === selectedId ? 'selectedPage' : ''}`} style={{marginLeft:'20px'}}>
+                                                setSelectedId(elements.indexOf(el))
+                                            }} key={elements.indexOf(el)} className={`${elements.indexOf(el) === selectedId ? 'selectedPage' : ''}`} style={{marginLeft:'20px'}}>
                                                 {el}
                                             </span>
                                         )
                                     }
-                                    )}
+                                    ) 
+                                }
+                                   
                                 <button className={`next `} disabled={selectedId+1 === users.length / usersPerPage} onClick={()=>setSelectedId(selectedId + 1)}>
                                 <div className={`${selectedId+1 === users.length / usersPerPage ? 'disabled':""}`}></div>
                                 <div className={`${selectedId+1 === users.length / usersPerPage ? 'disabled':""}`}></div>

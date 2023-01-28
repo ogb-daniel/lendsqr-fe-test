@@ -74,6 +74,9 @@ color: colors.$secondary1;
                 color: colors.$secondary;
                 border-bottom: 2px solid #39CDCC;
             }
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }

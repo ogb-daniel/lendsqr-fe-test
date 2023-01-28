@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { businesses, customers, settings } from '../helper';
 import { DashboardListItem } from './DashboardListItem';
 const downArrow =  require('../images/downArrow.png');
@@ -11,7 +12,8 @@ interface DashboardSidebarProps {
 
 
 export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({active,setActive}) => {
-        return (
+    const navigate = useNavigate();  
+    return (
             <div className='dashboard__main__sidebar'>
                 <li className='list-item'>
                 <img src={briefcase} alt="briefcase" />
@@ -65,7 +67,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({active,setAct
                     }
 
                    
-                    <li  className='list-item footer'>
+                    <li onClick={()=>navigate('/')} className='list-item footer'>
                         <img src={signOut} alt="signout" />
                         <span>Logout</span>
                     </li>
