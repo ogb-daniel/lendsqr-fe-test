@@ -19,7 +19,7 @@ export const UserDetail: React.FC<UserDetailProps> = ({setSelectedUserId,selecte
     
     useEffect(() => {
         const fetchUserDetail=async()=>{
-            const response = await fetch(`http://localhost:8010/proxy/lendsqr/api/v1/users/${selectedUserId}`);
+            const response = await fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${selectedUserId}`);
                const user = await response.json();
                console.log(user);
                window.localStorage.setItem(selectedUserId,JSON.stringify(user))

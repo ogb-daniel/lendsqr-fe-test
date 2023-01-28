@@ -38,7 +38,7 @@ export const UsersScreen: React.FC<UsersScreenProps> = ({selectedUserId,users,se
       }   
       useEffect(() => {
         const fetchUsers =async()=>{
-           const response = await fetch('http://localhost:8010/proxy/lendsqr/api/v1/users');
+           const response = await fetch('https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users');
             const users = await response.json();
             setUsers(users);
             console.log(users);
