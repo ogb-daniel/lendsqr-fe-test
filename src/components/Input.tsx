@@ -28,7 +28,7 @@ export const Input: React.FC<InputProps> = ({className,value,onChange,type,place
             <div className={`input_container ${className}`}>
                 
                 <input value={value} onChange={onChange} className={`input ${type === 'password' || search ? 'show_bar' : ""} `} ref={ref} type={type} placeholder={placeholder} />
-                {type === 'password' && <span onClick={handleShowPassword}>SHOW</span>}
+                {type === 'password' && <span onClick={handleShowPassword}>{showPass ? "HIDE" : 'SHOW'}</span>}
                 
                 {search && <div className='search'><img src={searchIcon} alt="search" /></div>}
             </div>

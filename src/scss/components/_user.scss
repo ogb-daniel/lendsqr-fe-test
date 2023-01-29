@@ -16,8 +16,8 @@ h3{
     }
     &__header{
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
         & *+*{
             margin-top: 0;
         }
@@ -26,7 +26,7 @@ h3{
     
     &__user{
         display: flex;
-        align-items: center;
+        flex-direction: column;
   
 line-height: 26px;
         & *+*{
@@ -62,9 +62,10 @@ color: colors.$secondary1;
     &__nav{
         position: relative;
         width: 100%;
+    
         bottom: 0;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         & *+*{
             margin-top: 0;
         }
@@ -95,7 +96,7 @@ color: colors.$secondary1;
     &.activate{
         border: 1px solid #39CDCC;
         color: colors.$secondary;
-        margin-left: 1em;
+       
         
     }
 }
@@ -114,7 +115,7 @@ color: colors.$secondary1;
         margin-top: 0.5em;
     }
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: 1fr;
     gap: 2em;
     & > *+*{
         margin-top: 0;
@@ -133,3 +134,61 @@ font-size: 16px;
 line-height: 19px;
     }
 }
+
+.action_btns{
+    display: flex;
+    flex-direction: column;
+    .btn.activate{
+        margin-left: 0;
+    }
+}
+
+@media (min-width:510px){
+    .action_btns{
+        display: block;
+        .btn.activate{
+            margin-left: 1em;
+        }
+    }
+ 
+}
+
+@media (min-width:610){
+    .personal{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (min-width:727px){
+    .personal{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (min-width:800px){
+    .personal{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media (min-width:997px) {
+    .details{
+        &__header{
+            flex-direction: row;
+            align-items: center;
+        justify-content: space-between;
+        }
+        &__user{
+            flex-direction: row;
+            align-items: center;
+      
+        }
+
+        &__nav{
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+    .personal{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+

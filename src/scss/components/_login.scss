@@ -10,6 +10,7 @@
         flex-direction: column;
         &__image{
             width: 30em;
+            display: none;
         }
     }
     @media  (min-width:800px) {
@@ -17,7 +18,9 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
+            &__image{
+                display: initial;
+            }
            }
            &__form{
             width: 500px;
