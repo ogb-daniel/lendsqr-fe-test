@@ -1,6 +1,5 @@
 
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="./src/images/logo.jpg" alt="logo" width="140"  height="auto" />
   <br/>
 
@@ -26,7 +25,7 @@
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
+- [❓ FAQ ](#faq)
 
 
 <!-- PROJECT DESCRIPTION -->
@@ -106,14 +105,6 @@ yarn start
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
 ### Deployment
 
 You can deploy this project using:
@@ -146,7 +137,7 @@ I would like to thank lendsqr for giving me the opportunity to build this awesom
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ  <a name="faq"></a>
 
 - **Getting a cors issue not being able to reach the endpoint to get user data**
 
